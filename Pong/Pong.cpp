@@ -1,20 +1,57 @@
-// Pong.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include <iostream>
+﻿#include "Bat.h"
+#include <sstream>
+#include <cstdlib>
+#include <SFML/Graphics.hpp>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	// Створюємо об'єкт VideoMode
+	VideoMode vm(1920, 1090);
+	// Створюємо та відкриваємо вікно для гри в повноекранному режимі
+	RenderWindow window(vm, "Pong", Style::Fullscreen);
+	int score = 0; // Ініціалізуємо змінну для рахунку
+	int lives = 3; // Ініціалізуємо змінну для життів
+
+	// Створюємо ракетку у нижній центральній частині екрану
+	Bat bat(1920 / 2, 1080 - 20); // Ракетка розташована на 20 пікселів вище нижнього краю
+	// Тут буде стоврений м'яч
+
+	// Створюємо текстовий об'єкт HUD
+	Text hud;
+	// Крутий ретрошрифт
+	Font font;
+	font.loadFromFile("fonts/DS-DIGIT.ttf");
+	// Встановлюємо шрифт
+	hud.setFont(font);
+	// Робимо його великим та красивим
+	hud.setCharacterSize(75);
+	// Вибираємо колір
+	hud.setFillColor(Color::White);
+	hud.setPosition(20, 20); // Розміщуємо у верхньому лівому куті
+
+	// Таймер для керування часом
+	Clock clock;
+	while (window.isOpen())
+	{
+		/*
+Обробка введення гравця
+**************************************
+**************************************
+**************************************
+*/
+/*
+Оновлення ракетки, м'яча та HUD
+**************************************
+**************************************
+**************************************
+*/
+/*
+Відображення ракетки, м'яча та HUD
+**************************************
+**************************************
+**************************************
+*/
+	}
+	return 0; 
+
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
